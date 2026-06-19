@@ -21,33 +21,7 @@
     const sourceModalClose = document.getElementById('sourceModalClose');
 
     // Slide → original chart/print images (shown as credibility pop-up before advancing)
-    const slideSources = {
-        3:  { title: 'Custos Meta Ads · CPC/CPM (2020 = 100)', images: [
-                { src: 'grafico-slide-3.png', caption: 'Crescimento relativo dos custos Meta Ads — CPC/CPM globais e Brasil efetivo (2020–2026).' }
-            ]},
-        4:  { title: 'Anunciantes, Verba em Mídia e Atenção (2019–2023)', images: [
-                { src: 'graficos-slide-4.png', caption: 'Crescimento de anunciantes e verba versus atenção disponível estagnada.' }
-            ]},
-        9:  { title: 'Arquitetura Andrômeda · Meta', images: [
-                { src: 'graficos-slide-9.png', caption: 'Hierarchical Ad Index + Model · Meta MTIA + NVIDIA Grace Hopper Platform.' }
-            ]},
-        14: { title: 'Mais de 50% atribuídos ao criativo · Meta', images: [
-                { src: 'grafico-slide-pilar1.png', caption: 'Print original com o dado divulgado pela Meta sobre o peso do criativo nos resultados de leilão.' }
-            ]},
-        16: { title: 'Os 5 gargalos criativos das marcas', images: [
-                { src: 'grafico-slide-o-gargalo-escondido-das-marcas.png', caption: 'Lack of Repertoire, Low Production Frequency, No Testing, Little Variety of Format, No Learning Method.' }
-            ]},
-        19: { title: 'Volume criativo acumulado · semanal', images: [
-                { src: 'grafico-slide-frequencia-a-cadencia-minima.png', caption: 'Repertório criativo crescendo de forma composta semana a semana.' }
-            ]},
-        22: { title: 'Qualidade dos eventos · Gerenciador da Meta', images: [
-                { src: 'graficoslide-pilar2-v2.png', caption: 'Tabela de eventos (PageView 7.6 · Iniciar checkout 6.1 · Compra 9.3 · Purchase Attempt 9.3).' },
-                { src: 'grafico-slide-pilar2.png', caption: 'Detalhe do evento Compra com pontuação 9.3/10 de qualidade da correspondência.' }
-            ]},
-        23: { title: 'Framework de Campanha · Teste · Pré-escala · Escala', images: [
-                { src: 'grafico-slide-framework-campanha.png', caption: 'Funil 100% → 30% → 10% de validação criativa.' }
-            ]}
-    };
+    const slideSources = {};
 
     let currentSlide = 1;
     let isAnimating = false;
@@ -231,6 +205,137 @@
             prevSlide();
         }
     }, { passive: true });
+
+    // --- EXPORT TO PDF ---
+    const exportBtn = document.getElementById('exportBtn');
+    const exportBtnLabel = document.getElementById('exportBtnLabel');
+
+    function createSourcePageSlide(slideNum, sourceData) {
+        const section = document.createElement('section');
+        section.className = 'slide slide--source-page injected-source';
+        section.dataset.injected = 'true';
+        section.dataset.slide = `source-${slideNum}`;
+
+        const glow = document.createElement('div');
+        glow.className = 'slide__bg-glow slide__bg-glow--amber';
+        section.appendChild(glow);
+
+        const content = document.createElement('div');
+        content.className = 'slide__content';
+
+        const eyebrow = document.createElement('p');
+        eyebrow.className = 'source-page__eyebrow';
+        eyebrow.textContent = `📎 Fonte Original · Referência do Slide ${slideNum}`;
+        content.appendChild(eyebrow);
+
+        const title = document.createElement('h2');
+        title.className = 'source-page__title';
+        title.textContent = sourceData.title;
+        content.appendChild(title);
+
+        const body = document.createElement('div');
+        body.className = 'source-page__body';
+
+        sourceData.images.forEach(img => {
+            const figure = document.createElement('figure');
+            figure.className = 'source-page__figure';
+
+            const image = document.createElement('img');
+            image.src = img.src;
+            image.alt = img.caption;
+            figure.appendChild(image);
+
+            const caption = document.createElement('figcaption');
+            caption.textContent = img.caption;
+            figure.appendChild(caption);
+
+            body.appendChild(figure);
+        });
+
+        content.appendChild(body);
+        section.appendChild(content);
+        return section;
+    }
+
+    function injectSourceSlides() {
+        const wrapper = document.getElementById('slidesWrapper');
+        if (!wrapper) return;
+
+        // Insert in REVERSE order so the DOM positions stay valid as we go
+        const slideNumbers = Object.keys(slideSources).map(Number).sort((a, b) => b - a);
+
+        slideNumbers.forEach(slideNum => {
+            const sourceData = slideSources[slideNum];
+            const targetSlide = document.querySelector(`.slide[data-slide="${slideNum}"]`);
+            if (!targetSlide) return;
+
+            const sourceSlide = createSourcePageSlide(slideNum, sourceData);
+            targetSlide.parentNode.insertBefore(sourceSlide, targetSlide.nextSibling);
+        });
+    }
+
+    function removeInjectedSlides() {
+        document.querySelectorAll('.injected-source').forEach(el => el.remove());
+    }
+
+    function waitForInjectedImages() {
+        const imgs = document.querySelectorAll('.injected-source img');
+        const promises = Array.from(imgs).map(img => {
+            if (img.complete && img.naturalHeight !== 0) return Promise.resolve();
+            return new Promise(resolve => {
+                img.addEventListener('load', resolve, { once: true });
+                img.addEventListener('error', resolve, { once: true });
+            });
+        });
+        return Promise.all(promises);
+    }
+
+    async function exportToPdf() {
+        if (exportBtn.dataset.loading === 'true') return;
+
+        // Close modal if open
+        if (modalOpen) closeSourceModal();
+
+        exportBtn.dataset.loading = 'true';
+        exportBtnLabel.textContent = 'Preparando...';
+
+        try {
+            injectSourceSlides();
+            await waitForInjectedImages();
+            // Small delay to let layout settle
+            await new Promise(resolve => setTimeout(resolve, 150));
+
+            exportBtnLabel.textContent = 'Abrindo impressão...';
+            window.print();
+        } catch (err) {
+            console.error('Erro ao preparar PDF:', err);
+            removeInjectedSlides();
+        } finally {
+            // Cleanup happens via afterprint; this is a fallback
+            setTimeout(() => {
+                if (exportBtn.dataset.loading === 'true') {
+                    removeInjectedSlides();
+                    exportBtn.dataset.loading = 'false';
+                    exportBtnLabel.textContent = 'Exportar PDF';
+                }
+            }, 1500);
+        }
+    }
+
+    window.addEventListener('afterprint', () => {
+        removeInjectedSlides();
+        exportBtn.dataset.loading = 'false';
+        exportBtnLabel.textContent = 'Exportar PDF';
+    });
+
+    exportBtn.addEventListener('click', exportToPdf);
+
+    // Ctrl/Cmd + P shortcut: prepare injected slides before native print dialog
+    window.addEventListener('beforeprint', () => {
+        if (!document.querySelector('.injected-source')) {
+            injectSourceSlides();
+        }
+    });
 
     // --- INIT ---
     updateUI();

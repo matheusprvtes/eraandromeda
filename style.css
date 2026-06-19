@@ -261,6 +261,40 @@ body {
     margin-bottom: 2rem;
 }
 
+/* --- TWO-COLUMN SPLIT (text + print) --- */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2rem;
+    align-items: center;
+}
+
+.split-layout__media {
+    margin: 0;
+}
+
+.split-layout__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    border: 1px solid var(--border-card);
+}
+
+.split-layout__media figcaption {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+    }
+}
+
 /* ============================================
    COVER SLIDE
    ============================================ */
@@ -1526,6 +1560,261 @@ body {
 
     .section-title {
         font-size: 2rem;
+    }
+}
+
+/* ============================================
+   EXPORT TO PDF
+   ============================================ */
+.export-btn {
+    position: fixed;
+    bottom: 1.7rem;
+    left: 1.7rem;
+    z-index: 100;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.28);
+    color: var(--amber-start);
+    padding: 0.55rem 1rem;
+    border-radius: 100px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.2s ease;
+    font-family: inherit;
+    letter-spacing: 0.02em;
+}
+
+.export-btn:hover {
+    background: rgba(245, 158, 11, 0.2);
+    border-color: rgba(245, 158, 11, 0.45);
+    transform: translateY(-1px);
+}
+
+.export-btn:disabled,
+.export-btn[data-loading="true"] {
+    opacity: 0.6;
+    cursor: wait;
+    pointer-events: none;
+}
+
+.export-btn svg {
+    flex-shrink: 0;
+}
+
+/* Source-page slides injected for PDF export — hidden on screen, full page in print */
+.slide--source-page .slide__content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+}
+
+.source-page__eyebrow {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber-start);
+    margin-bottom: 0.5rem;
+}
+
+.source-page__title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.3rem, 2.6vw, 1.9rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    color: var(--text-primary);
+}
+
+.source-page__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+.source-page__figure {
+    margin: 0;
+    width: 100%;
+    max-width: 820px;
+}
+
+.source-page__figure img {
+    width: 100%;
+    height: auto;
+    max-height: 4.8in;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-card);
+    background: rgba(255, 255, 255, 0.02);
+    display: block;
+}
+
+.source-page__figure figcaption {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.55rem;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+/* ============================================
+   PRINT STYLES (PDF Export)
+   ============================================ */
+@media print {
+    @page {
+        size: 13.33in 7.5in;
+        margin: 0;
+    }
+
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    html, body {
+        background: #0a0a0f !important;
+        overflow: visible !important;
+        height: auto !important;
+        width: auto !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    .progress-bar,
+    .slide-counter,
+    .nav-arrow,
+    .source-modal,
+    .export-btn,
+    .cover__cta-hint,
+    .slide__bg-glow {
+        display: none !important;
+    }
+
+    /* Kill all CSS filters — blur() doesn't rasterize reliably in print and
+       turns into hard-edged colored blocks covering text. */
+    .lucas-avatar::after,
+    .lucas-avatar::before {
+        display: none !important;
+    }
+
+    *, *::before, *::after {
+        filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+
+    /* Fallback for -webkit-background-clip: text — some print engines render
+       it as a solid block instead of clipping to glyphs. */
+    .gradient-text {
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
+        -webkit-text-fill-color: #f59e0b !important;
+        color: #f59e0b !important;
+    }
+    .gradient-text--red {
+        -webkit-text-fill-color: #ef4444 !important;
+        color: #ef4444 !important;
+    }
+    .gradient-text--blue {
+        -webkit-text-fill-color: #3b82f6 !important;
+        color: #3b82f6 !important;
+    }
+    .gradient-text--green {
+        -webkit-text-fill-color: #10b981 !important;
+        color: #10b981 !important;
+    }
+    .gradient-text--purple {
+        -webkit-text-fill-color: #8b5cf6 !important;
+        color: #8b5cf6 !important;
+    }
+
+    /* Same fallback for chart big-numbers / agenda numbers / mega stat */
+    .stat-mega__number,
+    .agenda-card__number,
+    .stat-banner__number,
+    .critical-question__mark {
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        background-clip: unset !important;
+        -webkit-text-fill-color: #f59e0b !important;
+        color: #f59e0b !important;
+    }
+
+    .slides-wrapper {
+        position: static !important;
+        height: auto !important;
+        width: auto !important;
+        display: block !important;
+    }
+
+    .slide {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        width: 13.33in !important;
+        height: 7.5in !important;
+        page-break-after: always !important;
+        break-after: page !important;
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: #0a0a0f !important;
+        overflow: hidden !important;
+    }
+
+    .slide:last-child {
+        page-break-after: auto !important;
+        break-after: auto !important;
+    }
+
+    .slide__content {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+    }
+
+    /* Disable enter animations and ensure all elements are visible */
+    .slide .agenda-card,
+    .slide .info-card,
+    .slide .comparison-card,
+    .slide .aida-step,
+    .slide .hero-element,
+    .slide .step-item,
+    .slide .build-step,
+    .slide .tech-card,
+    .slide .pixel-card,
+    .slide .integration-card,
+    .slide .test-step,
+    .slide .blocker-item,
+    .slide .checklist-item,
+    .slide .headline-model,
+    .slide .impact-item,
+    .slide .hierarchy-level,
+    .slide .geo-item,
+    .source-modal__figure,
+    .source-page__figure {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .source-page__figure img {
+        max-height: 4.8in !important;
     }
 }
 
