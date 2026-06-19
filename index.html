@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tráfego Pago em 2026 — Era Andrômeda | Lucas Renault</title>
+    <meta name="description" content="Apresentação: Como reposicionar sua estratégia de mídia no 2º semestre — as melhores práticas para anúncios na era Andrômeda.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter" id="slideCounter">1 / 24</div>
+
+    <!-- Navigation Arrows -->
+    <button class="nav-arrow nav-prev" id="prevBtn" aria-label="Slide anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="nav-arrow nav-next" id="nextBtn" aria-label="Próximo slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+
+    <!-- Slides Container -->
+    <div class="slides-wrapper" id="slidesWrapper">
+
+        <!-- ===== SLIDE 1: COVER ===== -->
+        <section class="slide slide--cover active" data-slide="1">
+            <div class="slide__bg-glow slide__bg-glow--amber"></div>
+            <div class="slide__content">
+                <img src="logo.png" alt="agência rei" class="brand-logo" />
+                <div class="cover__badge">
+                    <span class="cover__badge-dot"></span>
+                    @oreidotrafego · agência rei
+                </div>
+                <h1 class="cover__title">
+                    Tráfego Pago em 2026<br>
+                    <span class="gradient-text">Era Andrômeda</span>
+                </h1>
+                <p class="cover__subtitle">Como reposicionar sua estratégia de mídia no 2º semestre — as melhores práticas para anúncios na nova lógica de entrega da Meta.</p>
+                <div class="cover__speaker">
+                    <div class="lucas-avatar lucas-avatar--sm"></div>
+                    <div class="cover__speaker-info">
+                        <span class="cover__speaker-name">Lucas Renault</span>
+                        <span class="cover__speaker-role">Apresentado por · @oreidotrafego</span>
+                    </div>
+                </div>
+                <div class="cover__cta-hint">
+                    Pressione <kbd>→</kbd> para avançar
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 2: A DISPUTA MUDOU ===== -->
+        <section class="slide" data-slide="2">
+            <div class="slide__bg-glow slide__bg-glow--blue"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">A Nova Disputa</p>
+                <h2 class="slide__title">O e-commerce não disputa<br>mais <span class="gradient-text">apenas mídia</span></h2>
+                <p class="slide__description">A competição agora é por três coisas. A pergunta mudou de <strong>"quanto eu coloco de verba?"</strong> para <strong>"que sinais eu estou entregando?"</strong></p>
+                <div class="three-cards">
+                    <div class="info-card">
+                        <div class="info-card__number">1</div>
+                        <h3>Atenção</h3>
+                        <p>Capturar o olhar do usuário antes de qualquer concorrente no feed.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">2</div>
+                        <h3>Relevância</h3>
+                        <p>Ser escolhido pelo algoritmo como a melhor opção para entregar.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">3</div>
+                        <h3>Qualidade de Sinal</h3>
+                        <p>Alimentar o algoritmo com dados precisos para otimização contínua.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 3: O SINTOMA ===== -->
+        <section class="slide" data-slide="3">
+            <div class="slide__bg-glow slide__bg-glow--red"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">O Diagnóstico</p>
+                <h2 class="slide__title">O Sintoma: campanhas mais caras<br>e <span class="gradient-text gradient-text--red">menos previsíveis</span></h2>
+                <div class="chart-card">
+                    <h3 class="chart-card__title">Crescimento relativo dos custos Meta Ads (2020 = 100)</h3>
+                    <p class="chart-card__subtitle">Índice comparando CPC/CPM globais e Brasil efetivo, já com impacto tributário em 2026.</p>
+                    <svg class="chart-svg" viewBox="0 0 800 280" preserveAspectRatio="none">
+                        <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+                            <line x1="50" y1="240" x2="780" y2="240" stroke="rgba(255,255,255,0.14)" />
+                            <line x1="50" y1="185" x2="780" y2="185" stroke-dasharray="2,4" />
+                            <line x1="50" y1="130" x2="780" y2="130" stroke-dasharray="2,4" />
+                            <line x1="50" y1="75" x2="780" y2="75" stroke-dasharray="2,4" />
+                            <line x1="50" y1="20" x2="780" y2="20" stroke-dasharray="2,4" />
+                        </g>
+                        <g fill="rgba(240,240,245,0.45)" font-size="11" font-family="Inter, sans-serif" text-anchor="end">
+                            <text x="42" y="244">70</text>
+                            <text x="42" y="189">140</text>
+                            <text x="42" y="134">210</text>
+                            <text x="42" y="79">280</text>
+                            <text x="42" y="24">350</text>
+                        </g>
+                        <g fill="rgba(240,240,245,0.45)" font-size="11" font-family="Inter, sans-serif" text-anchor="middle">
+                            <text x="50" y="262">2020</text>
+                            <text x="170" y="262">2021</text>
+                            <text x="290" y="262">2022</text>
+                            <text x="410" y="262">2023</text>
+                            <text x="530" y="262">2024</text>
+                            <text x="650" y="262">2025</text>
+                            <text x="770" y="262">2026</text>
+                        </g>
+                        <polyline points="50,216.4 170,204.6 290,185 410,189 530,165.4 650,75 770,63.3"
+                            fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+                        <polyline points="50,216.4 170,200.7 290,177.1 410,208.5 530,157.6 650,78.9 770,36.6"
+                            fill="none" stroke="#34d399" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+                        <polyline points="50,216.4 170,192.8 290,165.4 410,137.9 530,118.3 650,110.5 770,40.5"
+                            fill="none" stroke="#f97316" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+                        <polyline points="50,216.4 170,196.8 290,169.3 410,141.8 530,122.1 650,106.6 770,52.3"
+                            fill="none" stroke="#f59e0b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" />
+                        <circle cx="770" cy="63.3" r="4" fill="#3b82f6" />
+                        <circle cx="770" cy="36.6" r="4" fill="#34d399" />
+                        <circle cx="770" cy="40.5" r="4" fill="#f97316" />
+                        <circle cx="770" cy="52.3" r="4" fill="#f59e0b" />
+                    </svg>
+                    <div class="chart-legend">
+                        <span class="chart-legend__item"><span class="chart-legend__dot" style="background:#3b82f6"></span>CPC global</span>
+                        <span class="chart-legend__item"><span class="chart-legend__dot" style="background:#34d399"></span>CPM global</span>
+                        <span class="chart-legend__item"><span class="chart-legend__dot" style="background:#f97316"></span>CPC Brasil efetivo</span>
+                        <span class="chart-legend__item"><span class="chart-legend__dot" style="background:#f59e0b"></span>CPM Brasil efetivo</span>
+                    </div>
+                    <p class="chart-caption">Série direcional consolidada com benchmarks públicos; Brasil efetivo inclui 12,15% de repasse tributário em 2026.</p>
+                </div>
+                <div class="callout-box">
+                    <span class="callout-box__icon">📈</span>
+                    <p><strong>CPM/CPC em alta</strong> + criativos cansando rápido + ROAS instável: a equação que comprime margens e torna o ROI imprevisível.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 4: O QUE MUDOU DEPOIS DA PANDEMIA ===== -->
+        <section class="slide" data-slide="4">
+            <div class="slide__bg-glow slide__bg-glow--purple"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Contexto</p>
+                <h2 class="slide__title">O que mudou depois da <span class="gradient-text gradient-text--purple">pandemia</span></h2>
+                <p class="slide__description">A digitalização acelerou, anunciantes explodiram e verbas cresceram. <strong>Mas a atenção das pessoas continuou a mesma.</strong></p>
+                <div class="chart-card">
+                    <h3 class="chart-card__title">Anunciantes, Verba em Mídia e Atenção Disponível</h3>
+                    <p class="chart-card__subtitle">Crescimento relativo de 2019 a 2023 — atenção do feed estagnada enquanto oferta e investimento dispararam.</p>
+                    <svg class="chart-svg" viewBox="0 0 800 280" preserveAspectRatio="none">
+                        <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+                            <line x1="50" y1="240" x2="780" y2="240" stroke="rgba(255,255,255,0.14)" />
+                            <line x1="50" y1="180" x2="780" y2="180" stroke-dasharray="2,4" />
+                            <line x1="50" y1="120" x2="780" y2="120" stroke-dasharray="2,4" />
+                            <line x1="50" y1="60" x2="780" y2="60" stroke-dasharray="2,4" />
+                        </g>
+                        <g fill="rgba(240,240,245,0.45)" font-size="11" font-family="Inter, sans-serif" text-anchor="end">
+                            <text x="42" y="244">0</text>
+                            <text x="42" y="184">100</text>
+                            <text x="42" y="124">200</text>
+                            <text x="42" y="64">300</text>
+                        </g>
+                        <g fill="rgba(240,240,245,0.45)" font-size="11" font-family="Inter, sans-serif" text-anchor="middle">
+                            <text x="123" y="262">2019</text>
+                            <text x="269" y="262">2020</text>
+                            <text x="415" y="262">2021</text>
+                            <text x="561" y="262">2022</text>
+                            <text x="707" y="262">2023</text>
+                        </g>
+                        <!-- 2019 -->
+                        <rect x="74" y="210" width="30" height="30" fill="#1e40af" rx="3"/>
+                        <rect x="108" y="204" width="30" height="36" fill="#3b82f6" rx="3"/>
+                        <rect x="142" y="180" width="30" height="60" fill="#06b6d4" rx="3"/>
+                        <!-- 2020 -->
+                        <rect x="220" y="174" width="30" height="66" fill="#1e40af" rx="3"/>
+                        <rect x="254" y="180" width="30" height="60" fill="#3b82f6" rx="3"/>
+                        <rect x="288" y="174" width="30" height="66" fill="#06b6d4" rx="3"/>
+                        <!-- 2021 -->
+                        <rect x="366" y="138" width="30" height="102" fill="#1e40af" rx="3"/>
+                        <rect x="400" y="144" width="30" height="96" fill="#3b82f6" rx="3"/>
+                        <rect x="434" y="171" width="30" height="69" fill="#06b6d4" rx="3"/>
+                        <!-- 2022 -->
+                        <rect x="512" y="90" width="30" height="150" fill="#1e40af" rx="3"/>
+                        <rect x="546" y="108" width="30" height="132" fill="#3b82f6" rx="3"/>
+                        <rect x="580" y="168" width="30" height="72" fill="#06b6d4" rx="3"/>
+                        <!-- 2023 -->
+                        <rect x="658" y="48" width="30" height="192" fill="#1e40af" rx="3"/>
+                        <rect x="692" y="66" width="30" height="174" fill="#3b82f6" rx="3"/>
+                        <rect x="726" y="165" width="30" height="75" fill="#06b6d4" rx="3"/>
+                    </svg>
+                    <div class="chart-legend">
+                        <span class="chart-legend__item"><span class="chart-legend__dot" style="background:#1e40af"></span>Anunciantes</span>
+                        <span class="chart-legend__item"><span class="chart-legend__dot" style="background:#3b82f6"></span>Verba em Mídia</span>
+                        <span class="chart-legend__item"><span class="chart-legend__dot" style="background:#06b6d4"></span>Atenção Disponível</span>
+                    </div>
+                </div>
+                <div class="callout-box callout-box--gold">
+                    <span class="callout-box__icon">⚔️</span>
+                    <p>Mais anunciantes + mais verba + espaço limitado = <strong>competição extrema</strong> no feed.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 5: ATENÇÃO > CATEGORIA ===== -->
+        <section class="slide" data-slide="5">
+            <div class="slide__bg-glow slide__bg-glow--amber"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">A Nova Régua</p>
+                <h2 class="slide__title">Atenção <span class="gradient-text">&gt;</span> Categoria</h2>
+                <p class="slide__description">No feed, você não compete apenas com outras lojas do seu segmento. Disputa espaço com creators, marketplaces, apps de entretenimento, memes e conteúdos virais.</p>
+                <div class="comparison-layout">
+                    <div class="comparison-card comparison-card--bad">
+                        <div class="comparison-card__icon">🏷️</div>
+                        <h3>Competição por categoria</h3>
+                        <p>Pensar só nos concorrentes diretos</p>
+                        <p>Brigar por palavra-chave</p>
+                        <p>Olhar apenas o nicho</p>
+                        <div class="comparison-card__verdict">= LIMITADO</div>
+                    </div>
+                    <div class="comparison-vs">VS</div>
+                    <div class="comparison-card comparison-card--good">
+                        <div class="comparison-card__icon">👁️</div>
+                        <h3>Competição por atenção</h3>
+                        <p>Disputar com creators e marketplaces</p>
+                        <p>Apps, memes e conteúdo viral</p>
+                        <p>Brigar pelo olhar, não pela busca</p>
+                        <div class="comparison-card__verdict comparison-card__verdict--good">= VENCE O LEILÃO</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 6: O ERRO COMUM ===== -->
+        <section class="slide" data-slide="6">
+            <div class="slide__bg-glow slide__bg-glow--red"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Onde a maioria erra</p>
+                <h2 class="slide__title">O Erro Comum: tentar resolver 2026<br>com metodologia de <span class="gradient-text gradient-text--red">2020</span></h2>
+                <p class="slide__description">Trocar a cor do criativo, alterar headline e mudar um único gancho <strong>não funciona mais</strong>. Criativos muito parecidos não ganham chances reais de entrega.</p>
+                <div class="critical-question">
+                    <div class="critical-question__mark">!</div>
+                    <p class="critical-question__text">O algoritmo trata variações superficiais como <strong>repetição</strong>. Eles morrem antes mesmo de chegar ao leilão.</p>
+                </div>
+                <div class="callout-box callout-box--gold">
+                    <span class="callout-box__icon">⚠️</span>
+                    <p>Diversidade superficial não engana o Andrômeda. <strong>Variação real exige mudança de eixo</strong> — formato, ângulo, persona, mensagem.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 7: O QUE É A ERA ANDRÔMEDA ===== -->
+        <section class="slide" data-slide="7">
+            <div class="slide__bg-glow slide__bg-glow--purple"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Era Andrômeda</p>
+                <h2 class="slide__title">Não é hack. Não é feature.<br>É um <span class="gradient-text gradient-text--purple">novo motor de decisão</span></h2>
+                <div class="hero-breakdown">
+                    <div class="hero-element">
+                        <div class="hero-element__tag">O QUE É</div>
+                        <p>Uma <strong>nova lógica criada pela Meta</strong> para selecionar e entregar anúncios em escala. Uma infraestrutura que redefine como os anúncios são filtrados, ranqueados e exibidos para as pessoas certas.</p>
+                    </div>
+                    <div class="hero-element">
+                        <div class="hero-element__tag hero-element__tag--cta">POR QUE IMPORTA</div>
+                        <p>O Andrômeda <strong>mudou a lógica do tráfego pago</strong>. Determina quais anúncios chegam ao leilão, quais são ignorados e quais escalam — antes mesmo da disputa começar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 8: POR QUE A META PRECISOU CRIAR ===== -->
+        <section class="slide" data-slide="8">
+            <div class="slide__bg-glow slide__bg-glow--blue"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">A Motivação da Meta</p>
+                <h2 class="slide__title">Por que a Meta precisou criar<br>esse <span class="gradient-text gradient-text--blue">motor</span></h2>
+                <div class="three-cards">
+                    <div class="info-card">
+                        <div class="info-card__number">⚡</div>
+                        <h3>Escala virou problema</h3>
+                        <p>Milhões de marcas disputando o mesmo feed ao mesmo tempo, com bilhões de combinações possíveis de anúncio.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">🚫</div>
+                        <h3>Zero tolerância ao ruim</h3>
+                        <p>Usuários ignoram, ocultam ou saem do app. A plataforma perde receita e atenção com cada entrega irrelevante.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">⏱</div>
+                        <h3>Decisão em milissegundos</h3>
+                        <p>A Meta precisa escolher qual anúncio entregar para cada pessoa em tempo real, sem margem para erro.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 9: COMO UM ANÚNCIO CHEGA AO LEILÃO ===== -->
+        <section class="slide" data-slide="9">
+            <div class="slide__bg-glow slide__bg-glow--green"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">A Arquitetura</p>
+                <h2 class="slide__title">Como um anúncio chega<br>(ou não) ao <span class="gradient-text gradient-text--green">leilão</span></h2>
+                <p class="slide__description">O leilão não é o começo do processo — <strong>ele é quase o fim</strong>. Antes de qualquer disputa, a Meta já fez uma filtragem silenciosa e decisiva.</p>
+                <div class="chart-card">
+                    <h3 class="chart-card__title">Andrômeda · Hierarchical Ad Index + Model</h3>
+                    <div class="andromeda-arch">
+                        <div class="arch-stage">
+                            <div class="arch-stage__title">User Requests</div>
+                            <div class="arch-stage__arrows">
+                                <span>↗</span><span>↗</span><span>↗</span><span>↗</span>
+                            </div>
+                        </div>
+                        <span class="arch-flow-arrow">→</span>
+                        <div class="arch-stage">
+                            <div class="arch-stage__title">Ads Corpus</div>
+                            <div class="arch-stage__visual">
+                                <span class="dot dot--blue"></span><span class="dot dot--purple"></span><span class="dot dot--dark"></span>
+                                <span class="dot dot--cyan"></span><span class="dot dot--gray"></span><span class="dot dot--purple"></span>
+                                <span class="dot dot--blue"></span><span class="dot dot--dark"></span><span class="dot dot--cyan"></span>
+                                <span class="dot dot--purple"></span><span class="dot dot--gray"></span><span class="dot dot--blue"></span>
+                                <span class="dot dot--purple"></span><span class="dot dot--cyan"></span><span class="dot dot--dark"></span>
+                                <span class="dot dot--blue"></span>
+                            </div>
+                        </div>
+                        <span class="arch-flow-arrow">→</span>
+                        <div class="arch-stage arch-stage--highlight">
+                            <div class="arch-stage__title">Hierarchical Ad Index + Model</div>
+                            <div class="arch-stage__tiers">
+                                <div class="arch-tier">
+                                    <span class="dot dot--sm dot--purple"></span><span class="dot dot--sm dot--blue"></span><span class="dot dot--sm dot--cyan"></span>
+                                    <span class="dot dot--sm dot--purple"></span><span class="dot dot--sm dot--blue"></span><span class="dot dot--sm dot--purple"></span>
+                                    <span class="dot dot--sm dot--cyan"></span><span class="dot dot--sm dot--blue"></span>
+                                </div>
+                                <div class="arch-tier">
+                                    <span class="dot dot--sm dot--purple"></span><span class="dot dot--sm dot--blue"></span>
+                                    <span class="dot dot--sm dot--cyan"></span><span class="dot dot--sm dot--purple"></span>
+                                </div>
+                                <div class="arch-tier">
+                                    <span class="dot dot--sm dot--blue"></span><span class="dot dot--sm dot--purple"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="arch-flow-arrow">→</span>
+                        <div class="arch-stage">
+                            <div class="arch-stage__title">Ad Candidates</div>
+                            <div class="arch-stage__visual">
+                                <span class="dot dot--blue"></span><span class="dot dot--purple"></span><span class="dot dot--cyan"></span>
+                                <span class="dot dot--purple"></span><span class="dot dot--blue"></span><span class="dot dot--cyan"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arch-platform">
+                        <span><strong>Model / system co-design</strong> · Meta MTIA + NVIDIA Grace Hopper Platform (Grace CPU + Hopper GPU)</span>
+                    </div>
+                </div>
+                <div class="callout-box">
+                    <span class="callout-box__icon">⚡</span>
+                    <p><strong>A maioria dos anúncios nem chega a competir.</strong> São descartados na pré-seleção do Andrômeda — antes mesmo do leilão começar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 10: A BIBLIOTECA INVISÍVEL ===== -->
+        <section class="slide" data-slide="10">
+            <div class="slide__bg-glow slide__bg-glow--amber"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">A Lógica do Filtro</p>
+                <h2 class="slide__title">A biblioteca invisível<br>dos <span class="gradient-text">criativos</span></h2>
+                <p class="slide__description">Imagine uma biblioteca gigante. A plataforma <strong>não lê cada anúncio individualmente</strong> — ela busca por categoria, prateleira e tema. Só os criativos com sinais claros são encontrados.</p>
+                <div class="three-cards">
+                    <div class="info-card">
+                        <div class="info-card__number">🎨</div>
+                        <h3>Formato e estética</h3>
+                        <p>Tipo de mídia, estilo visual e composição classificam seu criativo na prateleira certa.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">💬</div>
+                        <h3>Mensagem e produto</h3>
+                        <p>Promessa, argumento e item anunciado definem com quem e quando seu anúncio compete.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">📊</div>
+                        <h3>Comportamento e histórico</h3>
+                        <p>Desempenho anterior, engajamento e histórico de conversão completam o perfil do criativo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 11: RISCO & CANIBALIZAÇÃO ===== -->
+        <section class="slide" data-slide="11">
+            <div class="slide__bg-glow slide__bg-glow--red"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Risco Invisível</p>
+                <h2 class="slide__title">Risco & <span class="gradient-text gradient-text--red">Canibalização</span></h2>
+                <p class="slide__description">Seu anúncio pode <strong>nem chegar ao leilão</strong>. Criativos muito parecidos se canibalizam antes de disputar.</p>
+                <div class="impact-list">
+                    <div class="impact-item impact-item--negative">
+                        <span class="impact-item__icon">🪞</span>
+                        <div>
+                            <h3>Mesmo formato, mesma pessoa, mesma promessa</h3>
+                            <p>A plataforma trata como <strong>repetição</strong>. Nenhum dos criativos ganha chance real de competir.</p>
+                        </div>
+                    </div>
+                    <div class="impact-item impact-item--positive">
+                        <span class="impact-item__icon">🎯</span>
+                        <div>
+                            <h3>O problema não é a verba</h3>
+                            <p>É a <strong>falta de variedade de sinal</strong>. Sem repertório, mesmo a melhor conta trava na escala.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 12: A NOVA PERGUNTA ===== -->
+        <section class="slide" data-slide="12">
+            <div class="slide__bg-glow slide__bg-glow--blue"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Mudança de Mentalidade</p>
+                <h2 class="slide__title">A Nova <span class="gradient-text gradient-text--blue">Pergunta</span></h2>
+                <p class="slide__description">Pare de perguntar só <em>"qual campanha subir?"</em>. A nova pergunta é: <strong>que diversidade de mensagens, formatos, pessoas, provas e contextos estou oferecendo ao algoritmo?</strong></p>
+                <div class="hero-breakdown">
+                    <div class="hero-element">
+                        <div class="hero-element__tag">A PERGUNTA CERTA</div>
+                        <p>Em vez de focar só em orçamento ou estrutura de campanha, o foco deve estar na <strong>variedade real</strong>: mensagens diferentes, formatos distintos, personas variadas, provas sociais diversas e contextos múltiplos.</p>
+                    </div>
+                    <div class="hero-element">
+                        <div class="hero-element__tag hero-element__tag--cta">O PODER DO REPERTÓRIO</div>
+                        <p>Quanto maior e mais variado o repertório criativo, <strong>mais oportunidades</strong> o algoritmo tem de encontrar o anúncio certo para a pessoa certa — gerando escala com eficiência e previsibilidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 13: OS DOIS PILARES ===== -->
+        <section class="slide slide--section-title" data-slide="13">
+            <div class="slide__bg-glow slide__bg-glow--amber"></div>
+            <div class="slide__content">
+                <span class="section-number">02</span>
+                <h2 class="section-title">Os Dois Pilares<br><span class="gradient-text">da Performance em 2026</span></h2>
+                <p class="section-subtitle">Diversidade criativa garante entrega. Qualidade dos eventos garante aprendizado. Sem os dois, você não escala.</p>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 14: PILAR 1 — DIVERSIDADE CRIATIVA ===== -->
+        <section class="slide" data-slide="14">
+            <div class="slide__bg-glow slide__bg-glow--purple"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Pilar 1</p>
+                <h2 class="slide__title">Diversidade Criativa<br>na <span class="gradient-text gradient-text--purple">prática</span></h2>
+                <p class="slide__description">Diversidade <strong>não é fazer 20 versões iguais</strong>. Diferenças reais exigem variação em múltiplas dimensões: formato, ritmo, visual, ângulo, persona, contexto e mensagem.</p>
+                <div class="stat-mega">
+                    <div class="stat-mega__number">+50%</div>
+                    <div class="stat-mega__label">de todos os resultados de leilão podem ser <strong>atribuídos ao criativo</strong></div>
+                    <p class="stat-mega__source">"Sua performance digital está no criativo — e isso veio da Meta, não das 'vozes da minha cabeça'."</p>
+                </div>
+                <div class="callout-box callout-box--gold">
+                    <span class="callout-box__icon">📊</span>
+                    <p>Volume sem variedade é apenas repetição. <strong>Variação real é o que destrava entrega no Andrômeda.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 15: CRIATIVO É ATIVO DE RECEITA ===== -->
+        <section class="slide" data-slide="15">
+            <div class="slide__bg-glow slide__bg-glow--green"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Mudança de Status</p>
+                <h2 class="slide__title">Criativo é <span class="gradient-text gradient-text--green">ativo de receita</span></h2>
+                <p class="slide__description">Criativo deixou de ser detalhe e virou o <strong>principal motor de faturamento</strong>. Produção criativa não deve ser tratada como improviso, mas como atividade central do negócio.</p>
+                <div class="stat-banner">
+                    <span class="stat-banner__number">+50%</span>
+                    <span class="stat-banner__text">dos resultados de leilão são atribuídos ao criativo. Quem depende de mídia paga, depende de criativo. Sem rotina criativa, não há escala sustentável.</span>
+                </div>
+                <div class="callout-box">
+                    <span class="callout-box__icon">🎬</span>
+                    <p>Produção criativa precisa virar <strong>operação</strong> — com frequência, método e processo definidos.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 16: O GARGALO ESCONDIDO ===== -->
+        <section class="slide" data-slide="16">
+            <div class="slide__bg-glow slide__bg-glow--red"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Diagnóstico Real</p>
+                <h2 class="slide__title">O gargalo escondido<br>das <span class="gradient-text gradient-text--red">marcas</span></h2>
+                <p class="slide__description">Parece problema de gestão de tráfego, verba ou segmentação. Mas a causa real é <strong>repertório criativo insuficiente</strong>.</p>
+                <div class="h-bar-chart">
+                    <h3 class="h-bar-chart__title">Os 5 gargalos criativos (incidência relativa)</h3>
+                    <div class="h-bar-row">
+                        <span class="h-bar-row__label">Lack of Repertoire</span>
+                        <div class="h-bar-row__track"><div class="h-bar-row__fill" style="width: 90%"></div></div>
+                        <span class="h-bar-row__value">90</span>
+                    </div>
+                    <div class="h-bar-row">
+                        <span class="h-bar-row__label">Low Production Frequency</span>
+                        <div class="h-bar-row__track"><div class="h-bar-row__fill" style="width: 80%"></div></div>
+                        <span class="h-bar-row__value">80</span>
+                    </div>
+                    <div class="h-bar-row">
+                        <span class="h-bar-row__label">No Testing</span>
+                        <div class="h-bar-row__track"><div class="h-bar-row__fill" style="width: 72%"></div></div>
+                        <span class="h-bar-row__value">72</span>
+                    </div>
+                    <div class="h-bar-row">
+                        <span class="h-bar-row__label">Little Variety of Format</span>
+                        <div class="h-bar-row__track"><div class="h-bar-row__fill" style="width: 70%"></div></div>
+                        <span class="h-bar-row__value">70</span>
+                    </div>
+                    <div class="h-bar-row">
+                        <span class="h-bar-row__label">No Learning Method</span>
+                        <div class="h-bar-row__track"><div class="h-bar-row__fill" style="width: 60%"></div></div>
+                        <span class="h-bar-row__value">60</span>
+                    </div>
+                    <div class="h-bar-chart__axis">
+                        <span></span>
+                        <div class="h-bar-chart__axis-ticks">
+                            <span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span>
+                        </div>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="callout-box callout-box--gold">
+                    <span class="callout-box__icon">🎯</span>
+                    <p>O problema não é a gestão do tráfego. É <strong>falta de metodologia e processo criativo</strong>. Campanha = operação criativa.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 17: O NOVO PAPEL DO GESTOR ===== -->
+        <section class="slide" data-slide="17">
+            <div class="slide__bg-glow slide__bg-glow--blue"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Evolução Profissional</p>
+                <h2 class="slide__title">O novo papel do gestor<br>de <span class="gradient-text gradient-text--blue">tráfego / agência</span></h2>
+                <div class="three-cards">
+                    <div class="info-card">
+                        <div class="info-card__number">📊</div>
+                        <h3>De operador a estrategista</h3>
+                        <p>Interpretar dados, identificar gargalos criativos, propor testes e conectar mídia, oferta e conteúdo.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">🧠</div>
+                        <h3>Novas responsabilidades</h3>
+                        <p>O gestor moderno não apenas sobe campanhas — ele lê sinais, diagnostica e orienta a operação criativa.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">🎯</div>
+                        <h3>Indispensável</h3>
+                        <p>Quem só opera botões é substituível. <strong>Quem interpreta, orienta e propõe é indispensável.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 18: FRAMEWORK CRIATIVO ===== -->
+        <section class="slide" data-slide="18">
+            <div class="slide__bg-glow slide__bg-glow--amber"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Framework</p>
+                <h2 class="slide__title">5 elementos de variação<br>para o <span class="gradient-text">Andrômeda</span></h2>
+                <p class="slide__description">Variar apenas cor ou headline <strong>não é diversidade criativa</strong>. São múltiplas dimensões que transformam um produto em várias oportunidades de entrega e aprendizado.</p>
+                <div class="build-steps">
+                    <div class="build-step">
+                        <span class="build-step__icon">🎬</span>
+                        <h3>Formato & Ritmo</h3>
+                        <p>Reels, Stories, Feed, Carrossel, estático. Vídeos curtos, longos, rápidos ou conversacionais mudam retenção e desejo.</p>
+                    </div>
+                    <div class="build-step">
+                        <span class="build-step__icon">📐</span>
+                        <h3>Visual & Ângulo</h3>
+                        <p>Ambiente, enquadramento, iluminação, edição. Ângulos de Dor, Benefício, Prova e Urgência criam motivos de compra.</p>
+                    </div>
+                    <div class="build-step">
+                        <span class="build-step__icon">👤</span>
+                        <h3>Persona</h3>
+                        <p>Modelo, idade, contexto e linguagem ativam <strong>identificação</strong> em públicos diferentes do mesmo produto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 19: FREQUÊNCIA ===== -->
+        <section class="slide" data-slide="19">
+            <div class="slide__bg-glow slide__bg-glow--green"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Cadência</p>
+                <h2 class="slide__title">Frequência: a cadência mínima<br>da <span class="gradient-text gradient-text--green">máquina criativa</span></h2>
+                <p class="slide__description">Criativo deve ser <strong>rotina semanal</strong>. Sem produção, teste e melhoria constantes, o repertório acaba e a escala trava.</p>
+                <div class="chart-card">
+                    <h3 class="chart-card__title">Volume criativo acumulado (por semana)</h3>
+                    <p class="chart-card__subtitle">Quando a operação criativa ganha cadência, o repertório cresce de forma composta.</p>
+                    <svg class="chart-svg" viewBox="0 0 700 260" preserveAspectRatio="none">
+                        <defs>
+                            <linearGradient id="weekFill" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#10b981" stop-opacity="0.28"/>
+                                <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+                            </linearGradient>
+                        </defs>
+                        <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+                            <line x1="40" y1="220" x2="680" y2="220" stroke="rgba(255,255,255,0.14)" />
+                            <line x1="40" y1="190" x2="680" y2="190" stroke-dasharray="2,4" />
+                            <line x1="40" y1="160" x2="680" y2="160" stroke-dasharray="2,4" />
+                            <line x1="40" y1="130" x2="680" y2="130" stroke-dasharray="2,4" />
+                            <line x1="40" y1="100" x2="680" y2="100" stroke-dasharray="2,4" />
+                            <line x1="40" y1="70" x2="680" y2="70" stroke-dasharray="2,4" />
+                            <line x1="40" y1="40" x2="680" y2="40" stroke-dasharray="2,4" />
+                        </g>
+                        <g fill="rgba(240,240,245,0.45)" font-size="11" font-family="Inter, sans-serif" text-anchor="end">
+                            <text x="34" y="224">0</text>
+                            <text x="34" y="194">2</text>
+                            <text x="34" y="164">4</text>
+                            <text x="34" y="134">6</text>
+                            <text x="34" y="104">8</text>
+                            <text x="34" y="74">10</text>
+                            <text x="34" y="44">12</text>
+                        </g>
+                        <g fill="rgba(240,240,245,0.45)" font-size="11" font-family="Inter, sans-serif" text-anchor="middle">
+                            <text x="40" y="244">Week 1</text>
+                            <text x="168" y="244">Week 2</text>
+                            <text x="296" y="244">Week 3</text>
+                            <text x="424" y="244">Week 4</text>
+                            <text x="552" y="244">Week 5</text>
+                            <text x="680" y="244">Week 6</text>
+                        </g>
+                        <polygon points="40,175 168,160 296,115 424,130 552,85 680,55 680,220 40,220"
+                            fill="url(#weekFill)" />
+                        <polyline points="40,175 168,160 296,115 424,130 552,85 680,55"
+                            fill="none" stroke="#10b981" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" />
+                        <circle cx="40" cy="175" r="5" fill="#0a0a0f" stroke="#10b981" stroke-width="2.5" />
+                        <circle cx="168" cy="160" r="5" fill="#0a0a0f" stroke="#10b981" stroke-width="2.5" />
+                        <circle cx="296" cy="115" r="5" fill="#0a0a0f" stroke="#10b981" stroke-width="2.5" />
+                        <circle cx="424" cy="130" r="5" fill="#0a0a0f" stroke="#10b981" stroke-width="2.5" />
+                        <circle cx="552" cy="85" r="5" fill="#0a0a0f" stroke="#10b981" stroke-width="2.5" />
+                        <circle cx="680" cy="55" r="5" fill="#0a0a0f" stroke="#10b981" stroke-width="2.5" />
+                    </svg>
+                </div>
+                <div class="callout-box callout-box--gold">
+                    <span class="callout-box__icon">⏱</span>
+                    <p>A máquina criativa precisa de <strong>frequência para sobreviver</strong>. Quando o ritmo cai, o algoritmo perde repertório e a entrega despenca.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 20: LINHAS CRIATIVAS ===== -->
+        <section class="slide" data-slide="20">
+            <div class="slide__bg-glow slide__bg-glow--purple"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Repertório Obrigatório</p>
+                <h2 class="slide__title">Linhas criativas obrigatórias<br>para o seu <span class="gradient-text gradient-text--purple">e-commerce</span></h2>
+                <p class="slide__description">Toda marca precisa de uma <strong>biblioteca de linhas criativas testadas</strong>. Combine formatos, ângulos e personas para criar um repertório quase infinito.</p>
+                <div class="three-cards">
+                    <div class="info-card">
+                        <div class="info-card__number">🏆</div>
+                        <h3>Provas & Autoridade</h3>
+                        <p>UGC, entrevista, react, bastidores, palestrinha, caixinha de pergunta.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">🎓</div>
+                        <h3>Educação & Engajamento</h3>
+                        <p>Tutorial, conversacional lo-fi, trends, comparação, ranking, lista.</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card__number">🛒</div>
+                        <h3>Conversão & Oferta</h3>
+                        <p>Oferta direta, comparação de produto, best-sellers, campanha dinâmica de catálogo.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 21: PRODUTO → CRIATIVO ===== -->
+        <section class="slide" data-slide="21">
+            <div class="slide__bg-glow slide__bg-glow--blue"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Mina de Ouro</p>
+                <h2 class="slide__title">Como transformar produto<br>em <span class="gradient-text gradient-text--blue">criativo</span></h2>
+                <p class="slide__description">O criativo está escondido no seu negócio. <strong>Cada elemento da sua loja já é um criativo</strong> esperando ser ativado.</p>
+                <div class="checklist">
+                    <div class="checklist-item">
+                        <div class="checklist-item__box">★</div>
+                        <p><strong>Reviews</strong> → vire prova social com depoimento espontâneo</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-item__box">★</div>
+                        <p><strong>Best-sellers</strong> → ranking, lista, "produto mais comprado"</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-item__box">★</div>
+                        <p><strong>Dúvidas frequentes</strong> → caixinha de pergunta + resposta direta</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-item__box">★</div>
+                        <p><strong>Diferenciais</strong> → comparação lado a lado com concorrente</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-item__box">★</div>
+                        <p><strong>Rotina da loja</strong> → bastidores e tutorial geram autoridade</p>
+                    </div>
+                    <div class="checklist-item">
+                        <div class="checklist-item__box">★</div>
+                        <p><strong>Catálogo</strong> → campanha dinâmica + narrativa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 22: PILAR 2 — QUALIDADE DOS DADOS ===== -->
+        <section class="slide" data-slide="22">
+            <div class="slide__bg-glow slide__bg-glow--red"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Pilar 2</p>
+                <h2 class="slide__title">Qualidade dos dados<br>de <span class="gradient-text gradient-text--red">conversão</span></h2>
+                <p class="slide__description">Pixel, API de Conversões e qualidade de correspondência são o <strong>combustível da otimização</strong>. Um evento mal configurado gera uma campanha mal otimizada — o algoritmo aprende com o que você entrega.</p>
+                <div class="events-table">
+                    <div class="events-table__head">
+                        <span>Evento</span>
+                        <span>Status</span>
+                        <span>Qualidade da correspondência</span>
+                        <span>Total de eventos</span>
+                    </div>
+                    <div class="events-table__row">
+                        <span class="events-table__event">
+                            <span class="events-table__icon">👁</span>
+                            PageView
+                        </span>
+                        <span class="events-table__status">
+                            <span class="events-table__status-dot"></span>Ativo
+                        </span>
+                        <span class="events-table__quality events-table__quality--mid">7.6/10</span>
+                        <span class="events-table__total">1,1 mil</span>
+                    </div>
+                    <div class="events-table__row">
+                        <span class="events-table__event">
+                            <span class="events-table__icon">🛒</span>
+                            Iniciar finalização da compra
+                        </span>
+                        <span class="events-table__status">
+                            <span class="events-table__status-dot"></span>Ativo
+                        </span>
+                        <span class="events-table__quality events-table__quality--mid">6.1/10</span>
+                        <span class="events-table__total">436</span>
+                    </div>
+                    <div class="events-table__row">
+                        <span class="events-table__event">
+                            <span class="events-table__icon">💳</span>
+                            Compra
+                        </span>
+                        <span class="events-table__status">
+                            <span class="events-table__status-dot"></span>Ativo
+                        </span>
+                        <span class="events-table__quality events-table__quality--good">9.3/10</span>
+                        <span class="events-table__total">341</span>
+                    </div>
+                    <div class="events-table__row">
+                        <span class="events-table__event">
+                            <span class="events-table__icon">🧾</span>
+                            Purchase Attempt
+                        </span>
+                        <span class="events-table__status">
+                            <span class="events-table__status-dot"></span>Ativo
+                        </span>
+                        <span class="events-table__quality events-table__quality--good">9.3/10</span>
+                        <span class="events-table__total">230</span>
+                    </div>
+                </div>
+                <div class="callout-box">
+                    <span class="callout-box__icon">🎯</span>
+                    <p>Meta a perseguir: <strong>compra com nota 8+/10</strong> de qualidade de correspondência. Envie Estado, País, Cidade, Sobrenome, Nome, Gênero, Data de nascimento e CEP para subir o score.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 23: TESTE, PRÉ-ESCALA E ESCALA ===== -->
+        <section class="slide" data-slide="23">
+            <div class="slide__bg-glow slide__bg-glow--amber"></div>
+            <div class="slide__content">
+                <p class="slide__eyebrow">Framework de Campanha</p>
+                <h2 class="slide__title">Teste, Pré-escala<br>e <span class="gradient-text">Escala</span></h2>
+                <p class="slide__description">Cada etapa tem um papel. Sem esse funil, a verba é desperdiçada em criativos não validados. <strong>Criativo precisa de esteira para crescer.</strong></p>
+                <div class="funnel-grid">
+                    <div class="funnel-chart">
+                        <h3 class="funnel-chart__title">Framework de Campanha</h3>
+                        <div class="funnel-row funnel-row--100">
+                            <span class="funnel-row__label">Teste</span>
+                            <div class="funnel-row__bar-wrap"><div class="funnel-row__bar"></div></div>
+                            <span class="funnel-row__value">100%</span>
+                        </div>
+                        <div class="funnel-row funnel-row--30">
+                            <span class="funnel-row__label">Pré-escala</span>
+                            <div class="funnel-row__bar-wrap"><div class="funnel-row__bar"></div></div>
+                            <span class="funnel-row__value">30%</span>
+                        </div>
+                        <div class="funnel-row funnel-row--10">
+                            <span class="funnel-row__label">Escala</span>
+                            <div class="funnel-row__bar-wrap"><div class="funnel-row__bar"></div></div>
+                            <span class="funnel-row__value">10%</span>
+                        </div>
+                    </div>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <span class="step-item__number">1</span>
+                            <div>
+                                <h3>Teste</h3>
+                                <p>Valide criativos isolados, com <strong>verba pequena</strong> e objetivo claro.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-item__number">2</span>
+                            <div>
+                                <h3>Pré-escala</h3>
+                                <p>Vencedores ganham verba e são <strong>consolidados</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <span class="step-item__number">3</span>
+                            <div>
+                                <h3>Escala</h3>
+                                <p>Os melhores entram em campanhas <strong>robustas</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SLIDE 24: ENCERRAMENTO ===== -->
+        <section class="slide slide--cover slide--closing" data-slide="24">
+            <div class="slide__bg-glow slide__bg-glow--amber"></div>
+            <div class="slide__content">
+                <img src="logo.png" alt="agência rei" class="brand-logo" />
+                <div class="lucas-avatar lucas-avatar--lg"></div>
+                <div class="closing__name">
+                    <span class="closing__name-handle">@oreidotrafego</span>
+                    <span class="closing__name-full">Lucas Renault · Tráfego Pago</span>
+                </div>
+                <h2 class="cover__title" style="font-size: clamp(1.8rem, 4.5vw, 3rem);">
+                    Baixe o PPT da<br>
+                    <span class="gradient-text">palestra</span>
+                </h2>
+                <p class="cover__subtitle" style="max-width: 580px;">
+                    Me mande uma mensagem no direct com o número <strong>"2306"</strong> e eu te envio o material completo.
+                </p>
+                <div class="closing__stats">
+                    <span><strong>+18 mil</strong> alunos</span>
+                    <span class="closing__stats-divider">·</span>
+                    <span><strong>+2.000</strong> empresas atendidas</span>
+                    <span class="closing__stats-divider">·</span>
+                    <span><strong>570 mil</strong> seguidores</span>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Source Image Modal (Fonte Original) -->
+    <div class="source-modal" id="sourceModal" aria-hidden="true">
+        <div class="source-modal__inner" role="dialog" aria-modal="true" aria-labelledby="sourceModalTitle">
+            <header class="source-modal__header">
+                <div>
+                    <span class="source-modal__eyebrow">📎 Fonte original</span>
+                    <h3 class="source-modal__title" id="sourceModalTitle">Imagem de referência</h3>
+                </div>
+                <button class="source-modal__close" id="sourceModalClose" aria-label="Fechar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+            </header>
+            <div class="source-modal__body" id="sourceModalBody"></div>
+            <footer class="source-modal__footer">
+                <span>Pressione <kbd>→</kbd> para continuar</span>
+                <span>·</span>
+                <span><kbd>ESC</kbd> para fechar</span>
+            </footer>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
