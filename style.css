@@ -1672,7 +1672,7 @@ body {
    ============================================ */
 @media print {
     @page {
-        size: 13.33in 7.5in;
+        size: 3245px 1520px;
         margin: 0;
     }
 
@@ -1765,8 +1765,8 @@ body {
         left: auto !important;
         opacity: 1 !important;
         visibility: visible !important;
-        width: 13.33in !important;
-        height: 7.5in !important;
+        width: 3245px !important;
+        height: 1520px !important;
         page-break-after: always !important;
         break-after: page !important;
         page-break-inside: avoid !important;
@@ -1815,6 +1815,14 @@ body {
 
     .source-page__figure img {
         max-height: 4.8in !important;
+    }
+
+    /* Keep the ORIGINAL slide layout for print — the content block is scaled
+       up uniformly (a zoom) by JS before printing, via transform. This fills
+       the 3245x1520 page without changing any box, font ratio or image. */
+    .slide__content {
+        transform-origin: center center !important;
+        max-height: none !important;
     }
 }
 

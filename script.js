@@ -290,6 +290,47 @@
         return Promise.all(promises);
     }
 
+    // --- PRINT SCALING ---
+    // Export page size (px). Each slide's content block is scaled up uniformly
+    // (a pure zoom) to fill this page, preserving the exact layout, text boxes
+    // and image proportions. Scale is per-slide so each one fills the height.
+    const PRINT_PAGE_W = 3245;
+    const PRINT_PAGE_H = 1520;
+    const PRINT_FIT = 0.96; // safety margin so nothing touches the page edge
+
+    function applyPrintScale() {
+        // Measure every slide's natural content box.
+        const measures = [];
+        document.querySelectorAll('.slide__content').forEach(content => {
+            content.style.transform = 'none';
+            const w = content.offsetWidth;
+            const h = content.offsetHeight;
+            if (w && h) measures.push({ content, w, h });
+        });
+        if (!measures.length) return;
+
+        // Pick ONE common rendered width for the whole deck so every slide ends
+        // up the same width. It's the largest width that still lets each slide
+        // fit the page height (1520px) and width (3245px) — i.e. limited by the
+        // most content-heavy (tallest) slide.
+        let targetWidth = Infinity;
+        measures.forEach(({ w, h }) => {
+            targetWidth = Math.min(targetWidth, PRINT_PAGE_W, w * (PRINT_PAGE_H / h));
+        });
+        targetWidth *= PRINT_FIT;
+
+        // Apply the matching per-slide scale so all reach that same width.
+        measures.forEach(({ content, w }) => {
+            content.style.transform = `scale(${targetWidth / w})`;
+        });
+    }
+
+    function resetPrintScale() {
+        document.querySelectorAll('.slide__content').forEach(content => {
+            content.style.transform = '';
+        });
+    }
+
     async function exportToPdf() {
         if (exportBtn.dataset.loading === 'true') return;
 
@@ -310,11 +351,13 @@
         } catch (err) {
             console.error('Erro ao preparar PDF:', err);
             removeInjectedSlides();
+            resetPrintScale();
         } finally {
             // Cleanup happens via afterprint; this is a fallback
             setTimeout(() => {
                 if (exportBtn.dataset.loading === 'true') {
                     removeInjectedSlides();
+                    resetPrintScale();
                     exportBtn.dataset.loading = 'false';
                     exportBtnLabel.textContent = 'Exportar PDF';
                 }
@@ -324,17 +367,21 @@
 
     window.addEventListener('afterprint', () => {
         removeInjectedSlides();
+        resetPrintScale();
         exportBtn.dataset.loading = 'false';
         exportBtnLabel.textContent = 'Exportar PDF';
     });
 
     exportBtn.addEventListener('click', exportToPdf);
 
-    // Ctrl/Cmd + P shortcut: prepare injected slides before native print dialog
+    // Prepare the page right before the print dialog (covers both the export
+    // button and the native Ctrl/Cmd + P shortcut): scale each slide to fill
+    // the export page.
     window.addEventListener('beforeprint', () => {
         if (!document.querySelector('.injected-source')) {
             injectSourceSlides();
         }
+        applyPrintScale();
     });
 
     // --- INIT ---
